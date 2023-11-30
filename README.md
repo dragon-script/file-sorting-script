@@ -1,21 +1,19 @@
 # File Sorting Script
 
-This documentation provides information on using the Banana script for sorting files.
+This Bash script is designed to sort files from a source directory into subdirectories based on their types (image, document, video, audio, etc.). Additionally, the script handles potential name collisions by renaming files with a numeric suffix.
 
 ## Usage
-
-To use the Banana script, follow these steps:
 
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/dragon-script/File-Sorting-Script.git
+    git clone https://github.com/dragon-script/file-sorting-script.git
     ```
 
 2. **Navigate to the Script:**
 
     ```bash
-    cd File-Sorting-Script
+    cd file-sorting-script
     ```
 
 3. **Make the Script Executable:**
@@ -27,29 +25,32 @@ To use the Banana script, follow these steps:
 4. **Run the Script:**
 
     ```bash
-    ./sort_files.sh /path/to/source /path/to/destination
+    ./sort_files.sh <source_directory> <destination_directory>
     ```
 
-Make sure to replace "/path/to/source" and "/path/to/destination" with your actual source and destination directories.
+- **<source_directory>**: The directory containing the files you want to sort.
+- **<destination_directory>**: The directory where the sorted files will be placed.
 
-## Script Features
+## Script Structure
+# Functions
+The script is organized into functions for improved modularity and readability:
 
-### Modularity
+- **log()**
+This function logs messages with timestamps to a log file (sort_files.log).
 
-The script is modularized with functions for better organization and maintainability.
+- **create_directories()**
+Creates subdirectories in the destination directory for different file types.
 
-### Logging
+- **handle_collision()**
+Handles name collisions by renaming files with numeric suffixes to avoid overwriting existing files.
 
-The script logs activities to a file named `sort_files.log`. You can review this file for details on each step of the sorting process.
+- **categorize_files()**
+Categorizes and moves files from the source directory to the appropriate subdirectories based on their types.
 
-### Error Handling
+- It also utilizes **handle_collision()** to address name collisions.
 
-The script includes error handling to address potential issues, such as name collisions. In case of a collision, the script will rename the file to prevent overwriting.
+## Error Handling
+The script includes error handling to check for the correct number of command-line arguments. If the user fails to provide both source and destination directories, the script displays an error message and exits.
 
-## Example
-
-Below is an example of a script execution:
-
-```bash
-./sort_files.sh /path/to/source /path/to/destination
-```
+## Logging
+The script logs various activities, such as directory creation, file movements, and name collision handling, to a log file `sort_files.log`. This log file provides a detailed record of the script's execution.
