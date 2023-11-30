@@ -9,13 +9,13 @@ To use the Banana script, follow these steps:
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your/repository.git
+    git clone https://github.com/dragon-script/File-Sorting-Script.git
     ```
 
 2. **Navigate to the Script:**
 
     ```bash
-    cd repository
+    cd File-Sorting-Script
     ```
 
 3. **Make the Script Executable:**
