@@ -31,8 +31,8 @@ This Bash script is designed to sort files from a source directory into subdirec
 - **<source_directory>**: The directory containing the files you want to sort.
 - **<destination_directory>**: The directory where the sorted files will be placed.
 
-## Script Structure
-# Functions
+# Script Structure
+## Functions
 The script is organized into functions for improved modularity and readability:
 
 - **log()**
